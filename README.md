@@ -12,11 +12,11 @@ For each photo in this input set, the program should:
     * Ask the user for a caption
     * Generate a properly oriented 25% version of the photo
     * When done, the program should leave the following in the directory in which it was invoked:
-      * a file index.html containing, for each photo:
-      	* a properly oriented thumbnail
-	* a caption
-	* a link from the thumbnail to a properly oriented medium-size version of the photo
-      * the thumbnails and medium-size versions
+        * a file index.html containing, for each photo:
+            * a properly oriented thumbnail
+	    * a caption
+	    * a link from the thumbnail to a properly oriented medium-size version of the photo
+        * the thumbnails and medium-size versions
 
 ### Notes
 
