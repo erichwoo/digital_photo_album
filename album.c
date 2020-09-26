@@ -207,7 +207,7 @@ static int rotate(char* img, char* rename, int rot_dir) {
  *          1 if clockwise,
  *          2 if counter-clockwise
  */
-static int ask_user(int sv1[2], int sv2[2]) {
+static int ask_user(int sv1[2], int sv2[2]) { 
   int child_pid = 0;
 
   // create pipe and validate its creation
@@ -251,7 +251,7 @@ static int ask_user(int sv1[2], int sv2[2]) {
 
       // ask user for rotate/caption           
       input_string(message, writebuf, STRING_LEN);
-      
+
       // write user's answer to parent
       if (write(to_parent, writebuf, STRING_LEN) < 0)
 	fprintf(stderr, "error writing bytes to parent\n");
@@ -411,7 +411,7 @@ static int cap_html(char* caption) {
  * @return 0 on successful processing, -1 otherwise
  */
 static int process_img(char* img, char* thumb_name, char* med_name, int index, int ptp1[2], int ptp2[2]) {
-  int res_thumb, dis_thumb, rot_dir, status;
+  int res_thumb, res_med, dis_thumb, rot_dir, status;
   int sv1[2], sv2[2]; // sv1 = parent -> child; sv2 = child -> parent
   int send = 0, receive;
   int to_next = ptp1[WPIPE];    // ptp1 is from img_process to next img_process
@@ -434,7 +434,7 @@ static int process_img(char* img, char* thumb_name, char* med_name, int index, i
 #ifdef VERBOSE                                           
   printf("------%d forking for med resize\n", index);              
 #endif
-  resize(img, med_name, "25%");              
+  res_med = resize(img, med_name, "25%");              
 
 //////////////////////// WAIT FOR PREV IMG TO FINISH TO CONTINUE /////////////////////
 
@@ -546,6 +546,9 @@ static int process_img(char* img, char* thumb_name, char* med_name, int index, i
 #ifdef VERBOSE
     printf("------%d forking for med rotate\n", index);
 #endif
+    // make sure the new filename for medium is there
+    // so that magick can open it
+    waitpid(res_med, &status, 0); 
     rotate(med_name, med_name, rot_dir);
   }
   
@@ -632,7 +635,7 @@ static int process(int argc, char* argv[]) {
     int num, max_conversions = 3; // change this number to your liking
     while ((num = concurrent(pid, argc)) >= max_conversions)
       sleep(1); // let the next process run if max running is met
-  
+    
     pid[i] = fork();
     if (pid[i] == 0) {      
       char* path = argv[i];

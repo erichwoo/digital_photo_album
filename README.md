@@ -1,10 +1,28 @@
 # README for album.c
 
-Because, the Project 1 assignment only allowed for .txt files, I named the Makefile as "Makefile.txt". Before compiling the Makefile, remember to rename "Makefile.txt" to "Makefile".
+### Digital Photo Album
 
-Additionally, if you would like verbose step-by-step print statements to track the flow and creation of every process, uncomment the VERBOSE flag at the header of the Makefile. if you would like to see the print statements of the display waiting, as well as the html-order-wait pipeline communication, uncomment the WAIT flag at the header of teh Makefile. Keep in mind, WAIT is a subset of VERBOSE.
+This program allows a user to input a set of raw images, and produce an html photo album, utilizing the ImageMagick Library and its Linux command-line invocations.
 
-The demo.c file that I attached should be exactly the same as the demo.c that Prof. Smith gave us. My album.c relies on demo.o as an object file.
+For each photo in this input set, the program should:
+
+    - Generate a thumbnail version (10%) of the photo
+    - Display the thumbnail to the user
+    - Ask the user whether or not it should be rotated clockwise or counter-clockwise; if so, do so
+    - Ask the user for a caption
+    - Generate a properly oriented 25% version of the photo
+    - When done, the program should leave the following in the directory in which it was invoked:
+      - a file index.html containing, for each photo:
+      	- a properly oriented thumbnail
+	- a caption
+	- a link from the thumbnail to a properly oriented medium-size version of the photo
+      - the thumbnails and medium-size versions.
+
+### Notes
+
+The purpose of this project is to practice creating and managing processes, and to show good use of concurrency, good coordination of processes, and an accurate understanding of processes coordination in a lifeline
+
+If you would like verbose step-by-step print statements to track the flow and creation of every process, uncomment the VERBOSE flag at the header of the Makefile. if you would like to see the print statements of the display waiting, as well as the html-order-wait pipeline communication, uncomment the WAIT flag at the header of teh Makefile. Keep in mind, WAIT is a subset of VERBOSE.
 
 To build, run `make`.
 
