@@ -1,0 +1,13 @@
+photos/
+sample/
+gdb_demo.mp4
+album
+process_lifeline.docx
+.DS_Store
+core
+index.html
+*.jpg
+.*~
+*~
+*.o
+*.dSYM
