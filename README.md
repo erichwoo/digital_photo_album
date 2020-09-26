@@ -5,18 +5,18 @@
 This program allows a user to input a set of raw images, and produce an html photo album, utilizing the ImageMagick Library and its Linux command-line invocations.
 
 For each photo in this input set, the program should:
-
-    - Generate a thumbnail version (10%) of the photo
-    - Display the thumbnail to the user
-    - Ask the user whether or not it should be rotated clockwise or counter-clockwise; if so, do so
-    - Ask the user for a caption
-    - Generate a properly oriented 25% version of the photo
-    - When done, the program should leave the following in the directory in which it was invoked:
-      - a file index.html containing, for each photo:
-      	- a properly oriented thumbnail
-	- a caption
-	- a link from the thumbnail to a properly oriented medium-size version of the photo
-      - the thumbnails and medium-size versions.
+    
+    * Generate a thumbnail version (10%) of the photo
+    * Display the thumbnail to the user
+    * Ask the user whether or not it should be rotated clockwise or counter-clockwise; if so, do so
+    * Ask the user for a caption
+    * Generate a properly oriented 25% version of the photo
+    * When done, the program should leave the following in the directory in which it was invoked:
+      * a file index.html containing, for each photo:
+      	* a properly oriented thumbnail
+	* a caption
+	* a link from the thumbnail to a properly oriented medium-size version of the photo
+      * the thumbnails and medium-size versions
 
 ### Notes
 
