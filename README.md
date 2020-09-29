@@ -38,6 +38,8 @@ The `photos/` directory contains image files that you can run the `album` progra
 ../album ../photos/*.jpg
 ```
 
+For this sample test of photos 1-11, for every 3 photos, the first is rotated clockwise, the second counter-clockwise, and the third not at all.
+
 ### Notes
 
 The purpose of this project is to practice creating and managing processes, and to show good use of concurrency, good coordination of processes, and an accurate understanding of processes coordination in a lifeline
