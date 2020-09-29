@@ -22,9 +22,9 @@ For each photo in this input set, the program should:
 
 To build, run `make`.
 
-Run the program using the command:
+Run the program using the command-line args:
 
-```c
+```bash
 ./album [img]+
 ```
 
@@ -34,7 +34,7 @@ To clean up, run `make clean`.
 
 The `photos/` directory contains image files that you can run the `album` program on. Sample output is contained in `photos_sample_output/`, given the command line invocation when called within the `photos_sample_output/` directory:
 
-```c
+```bash
 ../album ../photos/*.jpg
 ```
 
