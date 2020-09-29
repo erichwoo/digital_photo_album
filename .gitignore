@@ -1,4 +1,3 @@
-photos/
 sample/
 gdb_demo.mp4
 album
@@ -7,6 +6,8 @@ process_lifeline.docx
 core
 index.html
 *.jpg
+!photos/*
+!photos_sample_output/*
 .*~
 *~
 *.o
